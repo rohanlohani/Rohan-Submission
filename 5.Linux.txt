@@ -1,0 +1,7 @@
+5.1) mkdir ~/test_new
+
+5.2) chmod 000 ~/test_new
+
+5.3) sudo touch ~/test_new/new.txt
+
+5.4) sudo rm -rf ~/test_new
