@@ -1,0 +1,22 @@
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define MAX 1000
+
+void printNumber(int num) {
+    PORTB = num % 10;
+    _delay_ms(200);
+}
+
+int main(void) {
+    DDRB = 0xFF;
+    int num = 1;
+
+    while (1) {
+        printNumber(num);
+        num += (num < MAX) * 1;
+        num *= (num <= MAX);
+    }
+
+    return 0;
+}

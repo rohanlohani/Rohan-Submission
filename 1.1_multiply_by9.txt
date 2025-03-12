@@ -1,0 +1,24 @@
+#include <avr/io.h>
+#include <util/delay.h>
+
+int multiplyByNine(int num) {
+    return (num << 3) + num; 
+}
+
+int main(void) {
+    DDRB |= (1 << PB0); 
+
+    int number = 7;
+    int result = multiplyByNine(number);
+
+    while (1) {
+        if (result % 2 == 0) {
+            PORTB |= (1 << PB0); 
+        } else {
+            PORTB &= ~(1 << PB0);
+        }
+        _delay_ms(500);
+    }
+
+    return 0;
+}

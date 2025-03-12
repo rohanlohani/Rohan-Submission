@@ -1,0 +1,17 @@
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
+int main(void) {
+    int x = 25;
+    int y = 15;
+    int minValue = MIN(x, y);
+
+    DDRB = 0xFF;
+    PORTB = minValue;
+
+    while (1);
+    
+    return 0;
+}

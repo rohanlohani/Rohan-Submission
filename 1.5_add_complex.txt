@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+typedef struct {
+    float real;
+    float imag;
+} Complex;
+
+Complex addComplex(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    return result;
+}
+
+int main(void) {
+    Complex num1 = {3.5, 2.5};
+    Complex num2 = {1.5, 4.0};
+
+    Complex sum = addComplex(num1, num2);
+
+    printf("Sum = %.2f + %.2fi\n", sum.real, sum.imag);
+
+    return 0;
+}
