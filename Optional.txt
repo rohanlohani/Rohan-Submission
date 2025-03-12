@@ -1,0 +1,23 @@
+The DRY principle encourages writing reusable code to avoid duplication. Instead of copying the same code multiple times, you should create functions, classes, or modules that can be called whenever needed.
+
+--Example Without DRY (Code Duplication)
+
+print("Welcome to the Calculator")
+a = 5
+b = 10
+print(f"Sum of {a} and {b} is {a + b}")
+
+x = 8
+y = 12
+print(f"Sum of {x} and {y} is {x + y}")
+
+
+
+--Example With DRY Principle (Reusable Code)
+
+def add_numbers(num1, num2):
+    print(f"Sum of {num1} and {num2} is {num1 + num2}")
+
+print("Welcome to the Calculator")
+add_numbers(5, 10)
+add_numbers(8, 12)
